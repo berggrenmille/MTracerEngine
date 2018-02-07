@@ -2,8 +2,9 @@
 //
 
 #include "stdafx.h"
-
-#define MAX_RAY_DEPTH 5 
+#include "SDL/SDL.h"
+#include <SDL/SDL_image.h>
+#define MAX_RAY_DEPTH 2
 #include <cstdlib> 
 #include <cstdio> 
 #include <cmath> 
@@ -11,6 +12,7 @@
 #include <vector> 
 #include <iostream> 
 #include <algorithm>
+
 
 #if defined __linux__ || defined __APPLE__ 
 // "Compiled for Linux
@@ -179,7 +181,7 @@ Vec3f trace(
 
 void render(const std::vector<Sphere> &spheres)
 {
-	unsigned width = 640, height = 480;
+	unsigned width = 1280, height = 720;
 	Vec3f *image = new Vec3f[width * height], *pixel = image;
 	float invWidth = 1 / float(width), invHeight = 1 / float(height);
 	float fov = 30, aspectratio = width / float(height);
@@ -206,20 +208,43 @@ void render(const std::vector<Sphere> &spheres)
 	delete[] image;
 }
 
-int main()
+int main(int argc, char ** argv)
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Window* window =  SDL_CreateWindow("test",
+		SDL_WINDOWPOS_CENTERED,
+		SDL_WINDOWPOS_CENTERED,
+		1280,
+		720,
+		SDL_WINDOW_OPENGL);
 	
 	std::vector<Sphere> spheres;
 	// position, radius, surface color, reflectivity, transparency, emission color
-	spheres.push_back(Sphere(Vec3f(0.0, -10004, -20), 10000, Vec3f(0.20, 0.20, 0.20), 0, 0.0));
-	spheres.push_back(Sphere(Vec3f(0.0, 0, -20), 4, Vec3f(1.00, 0.32, 0.36), 1, 0.5));
+	spheres.push_back(Sphere(Vec3f(0.0, -10004, -20), 10000, Vec3f(0.20, 0.20, 0.20), 0, 0.0)); //floor
+	spheres.push_back(Sphere(Vec3f(0.0, 0, -20), 4, Vec3f(0.00, 0.32, 0.36), 1, 0.5)); 
 	spheres.push_back(Sphere(Vec3f(5.0, -1, -15), 2, Vec3f(0.90, 0.76, 0.46), 1, 0.0));
 	spheres.push_back(Sphere(Vec3f(5.0, 0, -25), 3, Vec3f(0.65, 0.77, 0.97), 1, 0.0));
 	spheres.push_back(Sphere(Vec3f(-5.5, 0, -15), 3, Vec3f(0.90, 0.90, 0.90), 1, 0.0));
 	// light
-	spheres.push_back(Sphere(Vec3f(0.0, 20, -30), 3, Vec3f(0.00, 0.00, 0.00), 0, 0.0, Vec3f(3)));
+    spheres.push_back(Sphere(Vec3f(0.0, 20, -30), 3, Vec3f(0.00, 0.00, 0.00), 0, 0.0, Vec3f(3)));
+	
 	render(spheres);
+	SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
 
+	SDL_Surface * image = IMG_Load("untitled.ppm");
+	if (!image)
+	{
+		std::cout << SDL_GetError();
+	}
+	SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, image);
+	SDL_RenderCopy(renderer, texture, NULL, NULL);
+	SDL_RenderPresent(renderer);
+
+	SDL_Delay(10000);
+	SDL_DestroyTexture(texture);
+	SDL_FreeSurface(image);
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
     return 0;
 }
 

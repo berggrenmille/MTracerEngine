@@ -1,17 +1,18 @@
-﻿  stdafx.cpp
-  MTracerEngine.cpp
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(20): warning C4005: 'INFINITY': macro redefinition
+﻿  MTracerEngine.cpp
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(21): warning C4005: 'M_PI': macro redefinition
+  c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\dir\includes\sdl\sdl_stdinc.h(499): note: see previous definition of 'M_PI'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(22): warning C4005: 'INFINITY': macro redefinition
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\corecrt_math.h(89): note: see previous definition of 'INFINITY'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(127): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(133): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(142): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(186): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(190): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(191): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(214): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(215): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(216): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(217): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(218): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(129): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(135): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(144): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(188): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(192): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(193): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(223): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(224): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(225): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(226): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\marie\documents\github\mtracerengine\mtracerengine\mtracerengine\mtracerengine.cpp(227): warning C4305: 'argument': truncation from 'double' to 'float'
   MTracerEngine.vcxproj -> C:\Users\Marie\Documents\Github\MTracerEngine\MTracerEngine\Debug\MTracerEngine.exe
   MTracerEngine.vcxproj -> C:\Users\Marie\Documents\Github\MTracerEngine\MTracerEngine\Debug\MTracerEngine.pdb (Partial PDB)
